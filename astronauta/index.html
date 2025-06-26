@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronauta</title>
+
+    <style>
+        body{
+            margin:0;
+            background: radial-gradient(ellipse at center, #000, 60%, #111 100%);
+            overflow: hidden;
+        }
+        .stars{
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: url('estrellas.jpg') repeat;
+            z-index:0;
+            animation: movestars 60s linear infinite;
+        }
+        .astronauta{
+            position: absolute;
+            width: 20%;
+            height: 60%;
+            animation: float 6s ease-in-out infinite;
+            background: url('astronauta-removebg-preview.png') no-repeat center;
+            background-size: contain;
+            z-index:1;  
+            transition: all 0.3s ease;                                                                                             
+        }
+        .box-shadow{
+            top: 40%;
+            left: 35%;
+        }
+        .box-shadow:hover{
+            box-shadow: 20px 20px 30px rgb(255,0,0,0.6);
+        }
+        .drop-shadow{
+            top: 40%;
+            left: 65%;
+        }
+
+        .drop-shadow:hover{
+           filter: drop-shadow(20px 20px 30px rgb(0,255,255,0.7));
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(-50%, -50%)translatey(0);}
+            50% { transform: translate(-50%, -50%)translate(-20px);}
+        }
+        @keyframes movestars{
+            from{ background-position: 0 0;}
+            to {background-position: -1000px 1000px;}
+
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="stars"></div>
+    <div class="astronauta box-shadow"title="con box shadow"></div>
+    <div class="astronauta drop-shadow"title="con drop shadow"></div>
+    
+        
+    
+
+    
+
+    
+</body>
+</html>
